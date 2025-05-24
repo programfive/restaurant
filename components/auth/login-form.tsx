@@ -27,7 +27,7 @@ export const LoginForm = () => {
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl");
   const urlError = searchParams.get("error") === "OAuthAccountNotLinked"
-    ? "Email already in use with different provider!"
+    ? "¡El correo electrónico ya está en uso con un proveedor diferente!"
     : "";
 
   const [showTwoFactor, setShowTwoFactor] = useState(false);
@@ -64,21 +64,22 @@ export const LoginForm = () => {
             setShowTwoFactor(true);
           }
         })
-        .catch(() => setError("Something went wrong"));
+        .catch(() => setError("Algo salió mal"));
     });
   };
 
   return (
     <CardWrapper
-      headerLabel="Welcome back"
-      backButtonLabel="Don't have an account?"
+      headerTitle="Inicia sesión en tu cuenta"
+      headerLabel="¡Bienvenido de nuevo! Inicia sesión para continuar."
+      backButtonLabel="¿No tienes una cuenta?"
       backButtonHref="/auth/register"
       showSocial
     >
       <Form {...form}>
         <form 
           onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-6"
+          className="space-y-2"
         >
           <div className="space-y-4">
             {showTwoFactor && (
@@ -87,7 +88,7 @@ export const LoginForm = () => {
                 name="code"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Two Factor Code</FormLabel>
+                    <FormLabel>Código de dos factores</FormLabel>
                     <FormControl>
                       <Input
                         {...field}
@@ -107,12 +108,11 @@ export const LoginForm = () => {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Email</FormLabel>
+                      <FormLabel>Correo electrónico</FormLabel>
                       <FormControl>
                         <Input
                           {...field}
                           disabled={isPending}
-                          placeholder="john.doe@example.com"
                           type="email"
                         />
                       </FormControl>
@@ -125,12 +125,11 @@ export const LoginForm = () => {
                   name="password"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Password</FormLabel>
+                      <FormLabel>Contraseña</FormLabel>
                       <FormControl>
                         <Input
                           {...field}
                           disabled={isPending}
-                          placeholder="******"
                           type="password"
                         />
                       </FormControl>
@@ -138,10 +137,10 @@ export const LoginForm = () => {
                         size="sm"
                         variant="link"
                         asChild
-                        className="px-0 font-normal"
+                        className="px-0 w-fit font-normal"
                       >
                         <Link href="/auth/reset">
-                          Forgot password?
+                          ¿Olvidaste tu contraseña?
                         </Link>
                       </Button>
                       <FormMessage />
@@ -158,7 +157,7 @@ export const LoginForm = () => {
             type="submit"
             className="w-full"
           >
-            {showTwoFactor ? "Confirm" : "Login"}
+            {showTwoFactor ? "Confirmar" : "Iniciar sesión"}
           </Button>
         </form>
       </Form>

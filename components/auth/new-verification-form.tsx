@@ -21,7 +21,7 @@ export const NewVerificationForm = () => {
     if (success || error) return;
 
     if (!token) {
-      setError("Missing token!");
+      setError("¡Token no encontrado!");
       return;
     }
 
@@ -31,7 +31,7 @@ export const NewVerificationForm = () => {
         setError(data.error);
       })
       .catch(() => {
-        setError("Something went wrong!");
+        setError("¡Algo salió mal!");
       })
   }, [token, success, error]);
 
@@ -41,8 +41,9 @@ export const NewVerificationForm = () => {
 
   return (
     <CardWrapper
-      headerLabel="Confirming your verification"
-      backButtonLabel="Back to login"
+      headerTitle="Confirma tu correo electrónico"
+      headerLabel="Confirma tu dirección de correo electrónico para completar tu registro."
+      backButtonLabel="Volver al inicio de sesión"
       backButtonHref="/auth/login"
     >
       <div className="flex items-center w-full justify-center">

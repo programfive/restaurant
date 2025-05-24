@@ -48,8 +48,9 @@ export const ResetForm = () => {
 
   return (
     <CardWrapper
-      headerLabel="Forgot your password?"
-      backButtonLabel="Back to login"
+      headerTitle="Restablecer tu contraseña"
+      headerLabel="Ingresa tu correo electrónico y te enviaremos un enlace para restablecer tu contraseña."
+      backButtonLabel="Volver al inicio de sesión"
       backButtonHref="/auth/login"
     >
       <Form {...form}>
@@ -63,12 +64,11 @@ export const ResetForm = () => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>Correo electrónico</FormLabel>
                   <FormControl>
                     <Input
                       {...field}
                       disabled={isPending}
-                      placeholder="john.doe@example.com"
                       type="email"
                     />
                   </FormControl>
@@ -84,7 +84,7 @@ export const ResetForm = () => {
             type="submit"
             className="w-full"
           >
-            Send reset email
+            Enviar correo de restablecimiento
           </Button>
         </form>
       </Form>

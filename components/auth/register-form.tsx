@@ -50,8 +50,9 @@ export const RegisterForm = () => {
 
   return (
     <CardWrapper
-      headerLabel="Create an account"
-      backButtonLabel="Already have an account?"
+      headerTitle="Crea tu nueva cuenta"
+      headerLabel="¡Bienvenido! Completa los datos para comenzar."
+      backButtonLabel="¿Ya tienes una cuenta?"
       backButtonHref="/auth/login"
       showSocial
     >
@@ -66,12 +67,11 @@ export const RegisterForm = () => {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel>Nombre</FormLabel>
                   <FormControl>
                     <Input
                       {...field}
                       disabled={isPending}
-                      placeholder="John Doe"
                     />
                   </FormControl>
                   <FormMessage />
@@ -83,12 +83,11 @@ export const RegisterForm = () => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>Correo electrónico</FormLabel>
                   <FormControl>
                     <Input
                       {...field}
                       disabled={isPending}
-                      placeholder="john.doe@example.com"
                       type="email"
                     />
                   </FormControl>
@@ -101,12 +100,11 @@ export const RegisterForm = () => {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
+                  <FormLabel>Contraseña</FormLabel>
                   <FormControl>
                     <Input
                       {...field}
                       disabled={isPending}
-                      placeholder="******"
                       type="password"
                     />
                   </FormControl>
@@ -122,7 +120,7 @@ export const RegisterForm = () => {
             type="submit"
             className="w-full"
           >
-            Create an account
+            Crear cuenta
           </Button>
         </form>
       </Form>

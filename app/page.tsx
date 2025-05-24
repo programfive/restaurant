@@ -17,15 +17,15 @@ export default function Home() {
           "text-6xl font-semibold text-white drop-shadow-md",
           font.className,
         )}>
-          🔐 Auth
+          🔐 Autenticación
         </h1>
         <p className="text-white text-lg">
-          A simple authentication service
+          Un servicio de autenticación simple
         </p>
         <div>
-          <LoginButton  asChild>
+          <LoginButton asChild>
             <Button variant="secondary" size="lg">
-              Sign in
+              Iniciar sesión
             </Button>
           </LoginButton>
         </div>
