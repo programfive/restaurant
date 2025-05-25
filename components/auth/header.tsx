@@ -10,7 +10,7 @@ export const Header = ({
   label,
 }: HeaderProps) => {
   return (
-    <div className="w-full flex flex-col gap-y-2 text-center">
+    <div className="w-full flex flex-col gap-y-2 text-start md:text-center">
       <h1 className="text-2xl font-semibold">
         {title}
       </h1>
