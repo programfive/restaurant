@@ -1,7 +1,9 @@
+import { UserProfile } from "./components/user-profile";
+
 function SettingPage(){
     return (
         <div>
-            setting page
+            <UserProfile />
         </div>
     )
 }

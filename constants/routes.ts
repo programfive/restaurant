@@ -86,7 +86,7 @@ export const ROUTES_LINKS:NavLinks = {
     navSecondary: [
         {
           title: "Settings",
-          url: "#",
+          url: "/settings",
           icon: SettingsIcon,
         },
         {
